@@ -36,7 +36,7 @@ export interface Pharmacie {
   email: string;
   name: string;
   telephone: string;
-  image: string;
+  image?: string;
   availableDrugs: string[];
 }
 

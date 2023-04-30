@@ -11,21 +11,19 @@ import {
   Button,
   Mark,
   Box,
-  HStack,
   Popover,
   PopoverContent,
   PopoverTrigger,
-  Center,
   VStack,
   UnorderedList,
   ListItem,
   PopoverHeader,
   PopoverBody,
   PopoverArrow,
-  AspectRatio
+  AspectRatio,
 } from "@chakra-ui/react";
 import { Link } from "@remix-run/react";
-import { Hospital, Pharmacie } from "~/types";
+import { Pharmacie } from "~/types";
 
 export default function HospitalCard({
   availableDrugs,
@@ -37,12 +35,23 @@ export default function HospitalCard({
   return (
     <Card maxW="sm" role="group">
       <CardBody>
-        <AspectRatio ratio={16/9} borderRadius="lg" overflow="hidden" minW="100%">
-        {image ? (
-          <Image src={image} alt={name} objectFit="cover" _groupHover={{transform: "scale(1.1)"}} transition=".5s ease-in-out" />
-        ) : (
-          <Box w="100%" h="100%" bgColor="gray.400" />
-        )}
+        <AspectRatio
+          ratio={16 / 9}
+          borderRadius="lg"
+          overflow="hidden"
+          minW="100%"
+        >
+          {image ? (
+            <Image
+              src={image}
+              alt={name}
+              objectFit="cover"
+              _groupHover={{ transform: "scale(1.1)" }}
+              transition=".5s ease-in-out"
+            />
+          ) : (
+            <Box w="100%" h="100%" bgColor="gray.400" />
+          )}
         </AspectRatio>
 
         <Stack mt="6" spacing="3">
