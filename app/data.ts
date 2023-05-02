@@ -71,6 +71,42 @@ export const hospitals: Hospital[] = [
     ],
     image: centre_hospitalier,
   },
+
+  {
+    email: "contact@hrg.cm",
+    name: "Hopital général de Garoua",
+    telephone: "+237 222 271 261",
+    doctors: ["Dr Babong Arnold", "Dr Danmo Jean"],
+    services: [
+      "Urgence",
+      "Radiologie",
+      "Pharmacie",
+      "Laboratoire",
+      "Gynécologie",
+      "Cardiologie",
+      "Rhumatologie",
+      "Pédiatrie",
+    ],
+    image: hopital_general,
+    position: [9.303827, 13.388355],
+  },
+  {
+    email: "contact@hrg.cm",
+    name: "Hopital régionale de Garoua",
+    telephone: "+237 224 271 261",
+    doctors: ["Dr Vincent Pestalozie"],
+    services: [
+      "Urgence",
+      "Radiologie",
+      "Pharmacie",
+      "Laboratoire",
+      "Cardiologie",
+      "Rhumatologie",
+      "Pédiatrie",
+      "Gynécologie",
+    ],
+    image: centre_hospitalier,
+  },
 ];
 
 export const pharmacy: Pharmacie[] = [
@@ -96,6 +132,18 @@ export const pharmacy: Pharmacie[] = [
     telephone: "+237 220 176 870",
     name: "Pharmacie d'étoile",
     email: "la_grace@pharmacie.cm",
+    availableDrugs: ["Paracetamol 500 mg", "Mebendazol", "Albendazole 500mg"],
+  },
+  {
+    telephone: "+237 220 176 870",
+    name: "Pharmacie la victoire",
+    email: "marche@pharmacie.cm",
+    availableDrugs: ["Paracetamol 500 mg", "Furosémide", "Albendazole 500mg"],
+  },
+  {
+    telephone: "+237 220 176 870",
+    name: "Pharmacie de Djamboutou",
+    email: "garoua@pharmacie.cm",
     availableDrugs: ["Paracetamol 500 mg", "Mebendazol", "Albendazole 500mg"],
   },
 ];

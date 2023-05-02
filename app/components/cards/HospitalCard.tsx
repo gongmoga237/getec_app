@@ -9,13 +9,10 @@ import {
   CardFooter,
   Text,
   Button,
-  Mark,
   Box,
-  HStack,
   Popover,
   PopoverContent,
   PopoverTrigger,
-  Center,
   VStack,
   UnorderedList,
   ListItem,
@@ -58,7 +55,7 @@ export default function HospitalCard({
         </AspectRatio>
 
         <Stack mt="6" spacing="3">
-          <Text fontSize="md" fontWeight="bold" h="2lh" noOfLines="2">
+          <Text fontSize="md" fontWeight="bold" h="2lh" noOfLines={2}>
             {name}
           </Text>
         </Stack>
@@ -83,17 +80,25 @@ export default function HospitalCard({
             <PopoverContent>
               <PopoverArrow />
               <PopoverHeader>
-                Détails sur l'hopital <Mark fontWeight="bold">{name}</Mark>
+                Détails sur l'hopital{" "}
+                <Text as="span" fontWeight="bold">
+                  {name}
+                </Text>
               </PopoverHeader>
               <PopoverBody>
                 <VStack p="6" gap="1" placeItems="flex-start" pl="10">
                   <Text>
                     <PhoneIcon /> Téléphone:{" "}
-                    <Mark fontWeight="bold">{telephone}</Mark>
+                    <Text as="span" fontWeight="bold">
+                      {telephone}
+                    </Text>
                   </Text>
 
                   <Text>
-                    <AtSignIcon /> Email: <Mark fontWeight="bold">{email}</Mark>
+                    <AtSignIcon /> Email:{" "}
+                    <Text as="span" fontWeight="bold">
+                      {email}
+                    </Text>
                   </Text>
 
                   <Box>

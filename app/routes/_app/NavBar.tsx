@@ -21,11 +21,7 @@ import {
   SunIcon,
 } from "@chakra-ui/icons";
 import { Logo } from "~/components/icons";
-import {
-  NavBarMenuButton,
-  SignInButton,
-  SignUpButton,
-} from "~/components/buttons";
+import { NavBarMenuButton, SignUpButton } from "~/components/buttons";
 import { NAV_ITEMS, NavItem } from "./naItems";
 import { NavLink } from "@remix-run/react";
 import UserMenu from "./UserMenu";
@@ -89,7 +85,7 @@ export default function NavBar() {
 const DesktopNav = () => {
   const linkColor = useColorModeValue("gray.600", "gray.200");
   const linkHoverColor = useColorModeValue("brand.700", "brand.300");
-  const popoverContentBgColor = useColorModeValue("white", "gray.800");
+  const popoverContentBgColor = useColorModeValue("gray.100", "gray.700");
 
   return (
     <Stack direction={"row"} spacing={3} align="center">
@@ -109,6 +105,7 @@ const DesktopNav = () => {
                   fontSize="sm"
                   fontWeight={500}
                   color={linkColor}
+                  _active={{ color: linkHoverColor }}
                   _activeLink={{ color: linkHoverColor }}
                   _hover={{
                     textDecoration: "none",

@@ -8,8 +8,8 @@ import PharmacyCard from "~/components/cards/PharmacyCard";
 
 // Assets
 import homeHeroBg from "~/assets/home_hero_bg.jpg";
-import pharmacyImg from "~/assets/pharmacy.png";
 import pharmacy2Img from "~/assets/pharmacy2.jpg";
+import SearchForm from "~/components/forms/SearchForm";
 
 export const meta: V2_MetaFunction = () => [
   {
@@ -23,7 +23,7 @@ export default function AppIndexPage() {
       <Box
         bgImage={homeHeroBg}
         bgSize="cover"
-        h="25rem"
+        h="90vh"
         bgClip="border-box"
         bgRepeat="no-repeat"
         bgAttachment="fixed"
@@ -32,27 +32,32 @@ export default function AppIndexPage() {
           display="grid"
           gap="4rem"
           h="100%"
-          bgColor="blackAlpha.500"
+          bgColor="blackAlpha.600"
           placeContent="center"
           color="white"
         >
           <Heading as="h1" textAlign="center" display="grid" mb="0">
-            Nous vous souhaitons la bienvenue au
+            <Text as="span">Nous vous souhaitons la bienvenue au</Text>
             <Text
               as="span"
               letterSpacing="widest"
               w="100%"
-              color="brand.600"
-              fontSize="1.2em"
+              color="brand.500"
+              fontSize="1.5em"
               mt="6"
             >
               GETEC
             </Text>
           </Heading>
+
           <Text textAlign="center" fontSize="xl">
             Une application de <Text as="b">Télémédecine</Text> et de{" "}
             <Text as="b">Télésanté</Text>
           </Text>
+
+          <Box placeSelf="center">
+            <SearchForm />
+          </Box>
         </Box>
       </Box>
 
@@ -95,7 +100,9 @@ export default function AppIndexPage() {
           {pharmacy.map((pharmacy, index) => {
             return (
               <GridItem key={"home_pharmacy" + index} w="100%">
-                <PharmacyCard {...{...pharmacy, image: pharmacy.image || (index % 2 ? pharmacyImg: pharmacy2Img)}} />
+                <PharmacyCard
+                  {...{ ...pharmacy, image: pharmacy.image || pharmacy2Img }}
+                />
               </GridItem>
             );
           })}

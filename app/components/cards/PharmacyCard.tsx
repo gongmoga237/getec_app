@@ -9,7 +9,6 @@ import {
   CardFooter,
   Text,
   Button,
-  Mark,
   Box,
   Popover,
   PopoverContent,
@@ -55,7 +54,7 @@ export default function HospitalCard({
         </AspectRatio>
 
         <Stack mt="6" spacing="3">
-          <Text fontSize="lg" fontWeight="bold">
+          <Text fontSize="md" fontWeight="bold" h="2lh" noOfLines={2}>
             {name}
           </Text>
         </Stack>
@@ -80,17 +79,25 @@ export default function HospitalCard({
             <PopoverContent>
               <PopoverArrow />
               <PopoverHeader>
-                Détails sur la pharmacie <Mark fontWeight="bold">{name}</Mark>
+                Détails sur la pharmacie{" "}
+                <Text as="span" fontWeight="bold">
+                  {name}
+                </Text>
               </PopoverHeader>
               <PopoverBody>
                 <VStack p="6" gap="1" placeItems="flex-start" pl="10">
                   <Text>
                     <PhoneIcon /> Téléphone:{" "}
-                    <Mark fontWeight="bold">{telephone}</Mark>
+                    <Text as="span" fontWeight="bold">
+                      {telephone}
+                    </Text>
                   </Text>
 
                   <Text>
-                    <AtSignIcon /> Email: <Mark fontWeight="bold">{email}</Mark>
+                    <AtSignIcon /> Email:{" "}
+                    <Text as="span" fontWeight="bold">
+                      {email}
+                    </Text>
                   </Text>
 
                   <Box>

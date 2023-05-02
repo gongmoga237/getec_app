@@ -21,7 +21,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { theme } from "./theme";
 
-const DEFAULT_COLOR_MODE: "dark" | "light" | null = "dark";
+const DEFAULT_COLOR_MODE: "dark" | "light" | null = "light";
 
 const CHAKRA_COOKIE_COLOR_KEY = "chakra-ui-color-mode";
 

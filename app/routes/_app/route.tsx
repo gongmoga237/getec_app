@@ -1,10 +1,14 @@
-import { Box, Container, Heading } from "@chakra-ui/react";
+import { Box, Container, Heading, useColorModeValue } from "@chakra-ui/react";
 import NavBar from "./NavBar";
 import { Outlet, isRouteErrorResponse, useRouteError } from "@remix-run/react";
 
 export default function AppPage() {
   return (
-    <Box as="section">
+    <Box
+      as="section"
+      bgColor={useColorModeValue("gray.100", "gray.800")}
+      minH="100vh"
+    >
       <Container maxW="container.xl" as="header">
         <NavBar />
       </Container>
@@ -23,7 +27,11 @@ export function ErrorBoundary() {
 
   if (isRouteErrorResponse(error)) {
     return (
-      <Box>
+      <Box
+        bgColor={useColorModeValue("gray.100", "gray.800")}
+        w="100vw"
+        h="100vh"
+      >
         <Heading as="h1" bg="purple.600">
           [CatchBoundary]: {error.status} {error.statusText}
         </Heading>
@@ -31,7 +39,11 @@ export function ErrorBoundary() {
     );
   } else if (error instanceof Error) {
     return (
-      <Box>
+      <Box
+        bgColor={useColorModeValue("gray.100", "gray.800")}
+        w="100vw"
+        h="100vh"
+      >
         <Heading as="h1" bg="blue.500">
           [ErrorBoundary]: There was an error: {error.message}
         </Heading>
